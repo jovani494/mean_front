@@ -1,0 +1,19 @@
+.custom-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+  }
+  
+  .custom-card .card-body {
+    padding: 20px;
+  }
+  
+  .custom-card .card-title {
+    color: #007bff;
+  }
+  
+  .custom-card img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  

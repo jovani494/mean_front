@@ -1,0 +1,41 @@
+<div class="form-group">
+    <label for="DateRdv"><i class="fas fa-calendar"></i> Date de rendez-vous</label>
+    <input
+      type="date"
+      class="form-control custom-input-width"
+      id="Nom"
+      required
+      [(ngModel)]="appointment.DateRdv"
+      name="DateRdv"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="Heure"><i class="fas fa-clock"></i> Heure de rendez-vous</label>
+    <input
+      type="time"
+      class="form-control custom-input-width"
+      id="Nom"
+      required
+      [(ngModel)]="appointment.Heure"
+      name="Heure"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>
+      <i class="fas fa-user"></i> Sélectionner un employé
+    </label>
+    <div *ngFor="let employe of employes" class="form-check">
+      <input type="radio" class="form-check-input" name="Employe" [value]="employe._id" [(ngModel)]="appointment.Employe">
+      <label class="form-check-label">
+        <img [src]="employe.avatar" alt="{{ employe.Nom }} {{ employe.Prenom }}" class="avatar-img mr-2">
+        {{ employe.Nom }} {{ employe.Prenom }}
+      </label>
+    </div>
+  </div>
+  <div *ngIf="message" class="alert alert-danger" role="alert">
+    {{ message }}
+  </div>
+
+  <button (click)="saveService()" class="btn btn-success"><i class="fas fa-check"></i> Valider</button>

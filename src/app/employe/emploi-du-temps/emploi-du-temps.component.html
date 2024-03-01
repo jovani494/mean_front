@@ -1,0 +1,13 @@
+<div class="container" *ngIf="emploiDuTemps">
+    <h2>Détails de l'emploi du temps</h2>
+    <ul>
+      <li><strong>Matin :</strong> {{ emploiDuTemps.matinDebut }} - {{ emploiDuTemps.matinFin }}</li>
+      
+      <li><strong>Soir :</strong> {{ emploiDuTemps.soirDebut }} - {{ emploiDuTemps.soirFin }}</li>
+      
+    </ul>
+</div>
+
+<div class="container" *ngIf="!emploiDuTemps">
+    <a class="btn btn-sm btn-outline-info" routerLink = "/employe/edt/create">Ajouter un emploi de temps</a>
+</div>

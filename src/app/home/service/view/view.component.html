@@ -1,0 +1,17 @@
+<div class="service-card">
+    <div class="service-details">
+      <h2>{{ currentService.Nom }}</h2>
+      <p>{{ currentService.Description }}</p>
+      <p><strong>Durée :</strong> {{ currentService.Duree }} heures</p>
+      <p><strong>Prix :</strong> {{ formatPrice(currentService.Prix) }} Ariary</p>
+    </div>
+    <div class="service-image">
+      <img [src]="currentService.avatar" alt="Service Image">
+    </div>
+</div>
+<div class="d-flex justify-content-between align-items-center">
+  <div class="btn-group">
+    <a routerLink="/appointment/{{ currentService._id }}" *ngIf="clientId" class="btn btn-sm btn-outline-primary">Prendre rendez-vous</a>
+    <a routerLink="/login" *ngIf="!clientId" class="btn btn-sm btn-outline-warning">Connectez vous pour prendre un rendez-vous</a>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.card-img-top {
+    height: 200px; /* Pour s'assurer que l'image ne dépasse pas la largeur de son conteneur */
+    width: auto; /* Pour conserver les proportions originales de l'image */
+  }
+  
+  /* modal.component.css */
+  .modal-dialog {
+    max-width: 800px; /* Définissez la largeur maximale de la modal selon vos préférences */
+  }
+  
+  .modal-content {
+    border-radius: 10px; /* Ajoutez des coins arrondis à la modal */
+  }
+  
+  .modal-header {
+    background-color: #007bff; /* Couleur de fond de l'en-tête de la modal */
+    color: #ffffff; /* Couleur du texte de l'en-tête de la modal */
+  }
+  
+  .modal-title {
+    font-weight: bold; /* Mettez en gras le titre de la modal */
+  }
+  
+  .modal-body {
+    padding: 20px; /* Ajoutez un peu d'espace à l'intérieur de la modal */
+  }
+  
+  .modal-footer {
+    border-top: none; /* Supprimez la bordure supérieure du pied de page de la modal */
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Couleur de fond du bouton de fermeture et du bouton "Close" */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Couleur de fond du bouton "Save changes" */
+    border-color: #007bff; /* Couleur de la bordure du bouton "Save changes" */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Couleur de fond au survol du bouton "Save changes" */
+    border-color: #0056b3; /* Couleur de la bordure au survol du bouton "Save changes" */
+  }
+  
+  .close {
+    color: #ffffff; /* Couleur de l'icône de fermeture de la modal */
+  }

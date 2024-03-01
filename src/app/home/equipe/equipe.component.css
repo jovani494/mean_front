@@ -1,0 +1,35 @@
+/* employees.component.css */
+
+.employee-card {
+    border: none;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .employee-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .employee-image {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    color: #666;
+  }
+  
+  .btn-group {
+    margin-top: 1rem;
+  }
+  

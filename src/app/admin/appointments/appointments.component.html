@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Dashboard</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Rendez-vous</h2>
+        <ul class="list-group">
+          <li class="list-group-item appointment" *ngFor="let appointment of appointments" 
+          [ngStyle]="{'background-color': appointment.Etat?.Couleur } ">
+            <div >
+                <div>Date: {{ appointment.DateRdv | date:'dd/MM/yy' }}</div>
+                <div>Heure: {{ appointment.Heure }}</div>
+                <div>Client: {{ appointment.Client?.Nom }} {{ appointment.Client?.Prenom }}</div>
+                <div>Service: {{ appointment.Service?.Nom }}</div>
+                <div>Employé: {{ appointment.Employe?.Nom }} {{ appointment.Employe?.Prenom }}</div>
+                <div>État: {{ appointment.Etat?.Nom }}</div>
+                <p>Service Prix: {{ appointment.Service?.Prix }}</p>
+                <p>Service Commissions: {{ appointment.Service?.CommissionEmploye }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h2 class="mb-4">Statistics</h2>
+      
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Total Rendez-vous</h5>
+            <p class="card-text">{{ totalRdvCount }}</p>
+            <div>Total Service Price: {{ totalServicePrice }} Ariary</div>
+            <div>Total Commission: {{ totalCommission }} Ariary</div>
+            <button class="btn btn-info" (click)="calculateTotals()">Calculate Totals</button>
+          </div> 
+        </div>
+      
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Rendez-vous par Employé</h5>
+            <div *ngFor="let entry of rdvCountByEmployee | keyvalue">
+              <p class="card-text mb-2">Employee: {{ entry.key }}, Rendez-vous Count: {{ entry.value }}</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Rendez-vous par Service</h5>
+            <div *ngFor="let entry of rdvCountByService | keyvalue">
+              <p class="card-text mb-2">Service: {{ entry.key }}, Rendez-vous Count: {{ entry.value }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  

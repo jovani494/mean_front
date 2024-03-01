@@ -1,0 +1,60 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+
+        <div class="form-group">
+          <label for="matinDebut"><i class="fas fa-user"></i> Matin - Début</label>
+          <input
+            type="time"
+            class="form-control custom-input-width"
+            id="matinDebut"
+            required
+            [(ngModel)]="edt.matinDebut"
+            name="matinDebut"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="matinFin"><i class="fas fa-user"></i> Matin - Fin</label>
+            <input
+              type="time"
+              class="form-control custom-input-width"
+              id="matinFin"
+              required
+              [(ngModel)]="edt.matinFin"
+              name="matinFin"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="soirDebut"><i class="fas fa-user"></i> Soir - Début</label>
+            <input
+              type="time"
+              class="form-control custom-input-width"
+              id="soirDebut"
+              required
+              [(ngModel)]="edt.soirDebut"
+              name="soirDebut"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="soirFin"><i class="fas fa-user"></i> Soir - Fin</label>
+            <input
+              type="time"
+              class="form-control custom-input-width"
+              id="soirFin"
+              required
+              [(ngModel)]="edt.soirFin"
+              name="soirFin"
+            />
+          </div>
+        <button (click)="saveService()" class="btn btn-success"><i class="fas fa-check"></i> Valider</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Le service a été soumis avec succès!</h4>
+      </div>
+    </div>
+  </div>
+  

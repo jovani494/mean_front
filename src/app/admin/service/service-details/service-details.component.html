@@ -1,0 +1,42 @@
+<div class="card custom-card">
+    <div class="card-body">
+      <h4 class="card-title">Service</h4>
+      <div class="mb-3">
+        <label><strong>Nom : </strong></label>
+        <span class="ms-2">{{ currentService.Nom }}</span>
+      </div>
+      <div class="mb-3">
+        <label><strong>Description : </strong></label>
+        <span class="ms-2">{{ currentService.Description }}</span>
+      </div>
+      <div class="mb-3">
+        <label><strong>Prix : </strong></label>
+        <span class="ms-2">{{ currentService.Prix }} Ariary</span>
+      </div>
+      <div class="mb-3">
+        <label><strong>Duree : </strong></label>
+        <span class="ms-2">{{ currentService.Duree }} heures</span>
+      </div>
+      <div class="mb-3">
+        <label><strong>Commission : </strong></label>
+        <span class="ms-2">{{ currentService.Commission }} %</span>
+      </div>
+      <div class="mb-3">
+        <label><strong>CommissionEmploye : </strong></label>
+        <span class="ms-2">{{ currentService.CommissionEmploye }} Ariary</span>
+      </div>
+      <div *ngIf="currentService.avatar" class="mb-3">
+        <img [src]="currentService.avatar" class="img-fluid rounded" alt="Service Image">
+      </div>
+      <div *ngIf="!currentService.avatar" class="mb-3">
+        <img src="https://via.placeholder.com/150" class="img-fluid rounded" alt="Placeholder Image">
+      </div>
+      <a routerLink="/admin/service/update/{{ currentService._id }}" class="btn btn-warning me-2">
+        Edit
+      </a>
+      <button class="btn btn-danger" (click)="deleteService()">
+        Delete
+      </button>
+    </div>
+  </div>
+  

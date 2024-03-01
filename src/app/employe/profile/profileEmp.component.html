@@ -1,0 +1,27 @@
+<div *ngIf="employe" class="profile-container">
+    <div class="profile-header">
+      <img [src]="employe.avatar" alt="Avatar">
+      <h2>{{ employe.Nom }} {{ employe.Prenom }}</h2>
+    </div>
+    <div class="profile-details">
+      <p><strong>Genre:</strong> {{ employe.Gender }}</p>
+      <p><strong>Téléphone:</strong> {{ employe.Phone }}</p>
+      <p><strong>Service:</strong> {{ employe.Services?.Nom }}</p>
+    </div>
+    <div>
+      <button class="btn btn-sm btn-outline-secondary" (click)="afficherFormulaire()">Image</button>
+    </div>
+    <div *ngIf="formulaireVisible">
+      <form [formGroup]="form" (ngSubmit)="saveImage(employe._id)" enctype="multipart/form-data">
+        <input
+          type="file"
+          id="avatar"
+          required
+          formControlName="avatar"
+          name="avatar"
+          (change)="onFileSelected($event)"
+          />
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>

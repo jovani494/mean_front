@@ -1,0 +1,26 @@
+<div class="container-fluid" *ngIf="showAdminBoard">
+  <div class="row justify-content-start">
+    <div class="col-md-3 pl-0">
+      <div class="list-group">
+        <a routerLink="/admin/appointments" class="list-group-item list-group-item-action">Dashboard</a>
+        <a routerLink="/admin/service" class="list-group-item list-group-item-action">Service</a>
+        <a routerLink="/admin/employe" class="list-group-item list-group-item-action">Employe</a>
+        <a routerLink="/admin/employe/create" class="list-group-item list-group-item-action">Ajouter employé</a>
+        <a routerLink="/admin/client" class="list-group-item list-group-item-action">Client</a>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  

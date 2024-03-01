@@ -1,0 +1,41 @@
+
+
+<div class="container-fluid" *ngIf="client">
+  <div class="row justify-content-start">
+    <div class="col-md-3 pl-0">
+      <div class="list-group">
+        <a routerLink="/user/myappointments" class="list-group-item list-group-item-action">Mes historiques</a>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <div class="container">
+        <div class="profile-header">
+          <img [src]="client.avatar" alt="Avatar">
+          <h2>{{ client.Nom }} {{ client.Prenom }}</h2>
+        </div>
+        <div class="profile-details">
+          <p><strong>Genre:</strong> {{ client.Gender }}</p>
+          <p><strong>Téléphone:</strong> {{ client.Phone }}</p>
+        </div>
+        <div>
+          <button class="btn btn-sm btn-outline-secondary" (click)="afficherFormulaire()">Image</button>
+        </div>
+        <div *ngIf="formulaireVisible">
+          <form [formGroup]="form" (ngSubmit)="saveImage(client._id)" enctype="multipart/form-data">
+            <input
+              type="file"
+              id="avatar"
+              required
+              formControlName="avatar"
+              name="avatar"
+              (change)="onFileSelected($event)"
+              />
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Mes Rendez-vous</h1>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let appointment of appointments">
+        <div class="my-3"> <!-- Ajoute une marge en haut et en bas de chaque élément -->
+          <div class="list-group-item appointment" [ngStyle]="{'background-color': appointment.Etat?.Couleur }">
+            <div>
+              <div>Date: {{ appointment.DateRdv | date:'dd/MM/yy' }}</div>
+              <div>Heure: {{ appointment.Heure }}</div>
+              <div>Client: {{ appointment.Client?.Nom }} {{ appointment.Client?.Prenom }}</div>
+              <div>Service: {{ appointment.Service?.Nom }}</div>
+              <div>Employé: {{ appointment.Employe?.Nom }} {{ appointment.Employe?.Prenom }}</div>
+              <div>État: {{ appointment.Etat?.Nom }}</div>
+              <p>Service Prix: {{ appointment.Service?.Prix }}</p>
+              <p>Service Commissions: {{ appointment.Service?.CommissionEmploye }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+</div>
+  

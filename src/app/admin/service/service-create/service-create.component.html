@@ -1,0 +1,78 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="Nom"><i class="fas fa-user"></i> Nom</label>
+        <input
+          type="text"
+          class="form-control custom-input-width"
+          id="Nom"
+          required
+          [(ngModel)]="service.Nom"
+          name="Nom"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Description"><i class="fas fa-info-circle"></i> Description</label>
+        <input
+          class="form-control custom-input-width"
+          id="Description"
+          required
+          [(ngModel)]="service.Description"
+          name="Description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Duree"><i class="fas fa-clock"></i> Durée</label>
+        <input
+          type="number"
+          class="form-control custom-input-width"
+          id="Duree"
+          required
+          [(ngModel)]="service.Duree"
+          name="Duree"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Prix"><i class="fas fa-dollar-sign"></i> Prix</label>
+        <input
+          type="number"
+          class="form-control custom-input-width"
+          id="Prix"
+          (input)="calculCom()"
+          required
+          [(ngModel)]="service.Prix"
+          name="Prix"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Commission"><i class="fas fa-percent"></i> Commission</label>
+        <input
+          type="number"
+          class="form-control custom-input-width"
+          id="Commission"
+          (input)="calculCom()"
+          required
+          [(ngModel)]="service.Commission"
+          name="Commission"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="CommissionEmploye"><i class="fas fa-hand-holding-usd"></i> Commission Employé</label>
+        <input type="text" class="form-control custom-input-width" id="CommissionEmploye" [value]="service.CommissionEmploye" readonly>
+      </div>
+
+      <button (click)="saveService()" class="btn btn-success"><i class="fas fa-check"></i> Valider</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Le service a été soumis avec succès!</h4>
+      <button class="btn btn-success" (click)="newService()"><i class="fas fa-plus"></i> Ajouter</button>
+    </div>
+  </div>
+</div>

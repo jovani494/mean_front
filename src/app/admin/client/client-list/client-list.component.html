@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="mb-4">Clients List</h4>  
+        <div *ngIf="message" class="alert alert-success">
+          {{ message }}
+        </div>   
+        <div class="row">
+          
+          <div class="col-sm-6 col-md-3" *ngFor="let client of clients">
+            <div class="card mb-4 shadow-sm">
+              <img [src]="client.avatar" class="card-img-top" [alt]="client.Nom">
+              <div class="card-body">
+                <p class="card-title">Nom : {{ client.Nom }}</p>
+                <p class="card-title">Prenom : {{ client.Prenom }}</p>
+                <p class="card-title">Sexe : {{ client.Gender }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button class="btn btn-sm btn-danger" (click)="deleteClient(client._id)">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div>
+  
+  
+  
+  
+  

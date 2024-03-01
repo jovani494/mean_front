@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-4">Services List</h4> 
+      <a routerLink="/admin/service/create" 
+      class="btn btn-success me-2">Créer</a>
+      
+      <div class="row">
+        <div class="col-sm-6 col-md-3" *ngFor="let service of services">
+          <div class="card mb-4 shadow-sm">
+            <img [src]="service.avatar" class="card-img-top" [alt]="service.Nom">
+            <div class="card-body">
+              <h5 class="card-title">{{ service.Nom }}</h5>
+              <p class="card-text">Prix: {{ service.Prix }} Ariary</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a routerLink="/admin/service/detail/{{ service._id }}" class="btn btn-sm btn-outline-secondary">View</a>
+                  <a routerLink="/admin/service/update/{{ service._id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <div>
+                    <button class="btn btn-sm btn-outline-secondary" (click)="afficherFormulaire(service._id)">Image</button>
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-danger" (click)="deleteService(service._id)">Delete</button>
+              </div>
+              <div *ngIf="formulaireVisibleMap[service._id]">
+                <form [formGroup]="form" (ngSubmit)="saveImage(service._id)" enctype="multipart/form-data">
+                  <input
+                    type="file"
+                    id="avatar"
+                    required
+                    formControlName="avatar"
+                    name="avatar"
+                    (change)="onFileSelected($event)"
+                    />
+                  <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="message" class="alert alert-success">
+    {{ message }}
+  </div>
+</div>
+<div>
+
+
+
+

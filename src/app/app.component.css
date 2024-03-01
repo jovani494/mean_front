@@ -1,0 +1,59 @@
+.logo img{
+  height: 90px;
+  width: auto;
+}
+
+#app{
+  width : 100%;
+}
+
+.nav-item.logo {
+  margin-right: 30px; /* Ajustez la valeur de la marge selon vos préférences */
+}
+
+.serv .home{
+  margin-right: 40px;
+}
+
+/* Style général du menu */
+.menunav {
+  background-image: linear-gradient(to right, #cd6299, #590e6e);
+  padding: 10px 20px; /* Espacement intérieur */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre */
+  width: 100%;
+}
+
+/* Style des éléments de navigation */
+.nav-link {
+  color: #ffffff; /* Couleur du texte */
+  font-size: 16px; /* Taille de la police */
+  font-weight: 500; /* Graisse de la police */
+  text-decoration: none; /* Pas de soulignement */
+  transition: color 0.3s ease; /* Transition de couleur en douceur */
+}
+
+.nav-link:hover {
+  color: #C0C0C0   ; /* Couleur du texte au survol */
+}
+
+/* Style des éléments de navigation actifs */
+.nav-link.active {
+  color: #007bff; /* Couleur du texte pour l'élément actif */
+}
+
+.nav-item {
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transition douce */
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.268); /* Fond flou */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5); /* Ombre */
+}
+
+.nav-item {
+  font-family: 'Montserrat', sans-serif;
+}
+.nav-link{
+  font-size: 19px;
+}

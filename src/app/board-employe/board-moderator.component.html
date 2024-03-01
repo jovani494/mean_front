@@ -1,0 +1,17 @@
+<div class="container-fluid" *ngIf="showModeratorBoard">
+  <div class="row justify-content-start">
+    <div class="col-md-3 pl-0">
+      <div class="list-group">
+        <a routerLink="/employe/profile" class="list-group-item list-group-item-action">Mon profil</a>
+        <a routerLink="/employe/mytasks" class="list-group-item list-group-item-action">Mes taches</a>
+        <a routerLink="/employe/edt" class="list-group-item list-group-item-action">Mon emploi du temps</a>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

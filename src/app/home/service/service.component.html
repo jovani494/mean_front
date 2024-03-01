@@ -1,0 +1,28 @@
+<!-- service.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-4">Nos services</h4>
+      <div class="row">
+        <div class="col-sm-6 col-md-4" *ngFor="let service of services">
+          <div class="card mb-4 shadow-sm service-card h-100">
+            <img [src]="service.avatar" class="card-img-top service-image" [alt]="service.Nom">
+            <div class="card-body">
+              <a routerLink="/service/{{ service._id }}"><h5 class="card-title">{{ service.Nom }}</h5></a>
+              <p class="card-text">Prix : {{ formatPrice(service.Prix) }} Ariary</p>
+              <p class="card-text">Durée : {{ service.Duree }} Heures</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a routerLink="/service/{{ service._id }}" class="btn btn-sm btn-outline-info">Voir</a>
+                  <span class="mx-1"></span>
+                  <a *ngIf="clientId" routerLink="/appointment/{{ service._id }}" class="btn btn-sm btn-outline-success">Prendre rendez-vous</a>
+                  <a routerLink="/login" *ngIf="!clientId" class="btn btn-sm btn-outline-warning">Connectez vous pour prendre un rendez-vous</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

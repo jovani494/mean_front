@@ -1,0 +1,23 @@
+<!-- employees.component.html -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="mb-4">Nos employés</h4>
+        <div class="row">
+          <div class="col-sm-6 col-md-4" *ngFor="let employe of employes">
+            <div class="card mb-4 shadow-sm employee-card h-100">
+              <img [src]="employe.avatar" class="card-img-top employee-image" [alt]="employe.Nom">
+              <div class="card-body">
+                <h5 class="card-title">{{ employe.Nom }} {{ employe.Prenom }}</h5>
+                <p class="card-text">Phone: {{ employe.Phone }}</p>
+                <p class="card-text">Gender: {{ employe.Gender }}</p>
+                <p class="card-text">Services: {{ employe.Services?.Nom }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

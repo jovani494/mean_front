@@ -1,0 +1,76 @@
+<div *ngIf="currentService._id" class="edit-form">
+  <h4>Service</h4>
+  <form>
+    <div class="form-group">
+      <label for="Nom"><i class="fas fa-user"></i> Nom</label>
+      <input
+        type="text"
+        class="form-control input-sm custom-input-width" 
+        id="Nom"
+        [(ngModel)]="currentService.Nom"
+        name="Nom"
+      />
+    </div>
+    <div class="form-group">
+      <label for="Description"><i class="fas fa-info-circle"></i> Description</label>
+      <input
+        type="text"
+        class="form-control input-sm custom-input-width" 
+        id="Description"
+        [(ngModel)]="currentService.Description"
+        name="Description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Duree"><i class="fas fa-clock"></i> Durée</label>
+      <input
+        type="number"
+        class="form-control input-sm custom-input-width"
+        id="Duree"
+        [(ngModel)]="currentService.Duree"
+        name="Duree"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Prix"><i class="fas fa-dollar-sign"></i> Prix</label>
+      <input
+        type="number"
+        class="form-control input-sm custom-input-width" 
+        (input)="calculCom()"
+        id="Prix"
+        [(ngModel)]="currentService.Prix"
+        name="Prix"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Commission"><i class="fas fa-percent"></i> Commission</label>
+      <input
+        type="number"
+        class="form-control input-sm custom-input-width" 
+        (input)="calculCom()"
+        id="Commission"
+        [(ngModel)]="currentService.Commission"
+        name="Commission"
+      />
+    </div>
+    <div class="form-group">
+      <label for="CommissionEmploye"><i class="fas fa-hand-holding-usd"></i> Commission Employé</label>
+      <input type="text" class="form-control input-sm custom-input-width " id="CommissionEmploye" [value]="currentService.CommissionEmploye" readonly>
+    </div>
+  </form>
+
+  <button
+    type="submit"
+    class="btn btn-success mb-2" 
+    (click)="updateService()"
+  >
+    <i class="fas fa-save"></i> Mettre à jour <!-- Ajouter une icône "Save" -->
+  </button>
+
+  <div *ngIf="message" class="alert alert-success">
+    {{ message }}
+  </div>
+</div>

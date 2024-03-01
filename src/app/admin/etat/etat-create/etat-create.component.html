@@ -1,0 +1,35 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="Nom">Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Nom"
+            required
+            [(ngModel)]="etat.Nom"
+            name="Nom"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="Couleur">Couleur</label>
+          <input type="color"
+            class="form-control"
+            id="Couleur"
+            required
+            [(ngModel)]="etat.Couleur"
+            name="Couleur"
+          />
+        </div>
+  
+        <button (click)="saveEtat()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Etat was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newEtat()">Add</button>
+      </div>
+    </div>
+  </div>

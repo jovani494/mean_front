@@ -1,0 +1,15 @@
+<div class="profile" *ngFor="let employe of employes">
+    <div class="avatar">
+      <img [src]="employe.avatar || 'placeholder.jpg'" alt="Avatar">
+    </div>
+    <div class="details">
+      <h2>{{ employe.Nom }} {{ employe.Prenom }}</h2>
+      <p><strong>Genre:</strong> {{ employe.Gender }}</p>
+      <p><strong>Téléphone:</strong> {{ employe.Phone }}</p>
+      <p><strong>Service:</strong> {{ employe.Services?.Nom }}</p>
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="deleteEmploye(employe._id)">Delete</button>
+</div>
+<div *ngIf="message" class="alert alert-success">
+  {{ message }}
+</div>

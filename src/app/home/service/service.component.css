@@ -1,0 +1,32 @@
+/* service.component.css */
+
+.service-card {
+    border: none;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    color: #666;
+  }
+  
+  .btn-group {
+    margin-top: 1rem;
+  }
+  .service-image {
+    height: 200px; /* ou la hauteur souhaitée */
+    object-fit: cover; /* pour conserver les proportions */
+  }  
