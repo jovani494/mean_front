@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { EmployeService } from 'src/app/admin/employe/employe.service';
 import { StorageService } from '../../_services/storage.service';
 import { RendezvousModel } from 'src/app/models/rendezvous.model';
